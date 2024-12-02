@@ -3,7 +3,7 @@ const axios = require('axios');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3003;
 
 // Set EJS as the template engine and serve static files
 app.set('view engine', 'ejs');
@@ -32,3 +32,4 @@ app.get('/commits', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}/commits`));
+

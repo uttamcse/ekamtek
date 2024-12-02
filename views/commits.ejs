@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Commits</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
     <h1>Recent Commits for nodejs/node Repository</h1>
@@ -18,15 +47,19 @@
         </thead>
         <tbody>
             <% commits.forEach(commit => { %>
-                <tr style="background-color: <%= /\d$/.test(commit.hash) ? '#FFFF00' : 'transparent' %>;">
+                <tr style="background-color:<%= /\d$/.test(commit.hash) ? '#FFFF00' : 'transparent' %>">
                     <td><%= commit.author %></td>
                     <td><%= commit.message %></td>
                     <td><%= commit.hash %></td>
                 </tr>
             <% }); %>
         </tbody>
+        
     </table>
 </body>
 </html>
+
+
+
 
 
