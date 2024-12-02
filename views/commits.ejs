@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Commits</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Recent Commits for nodejs/node Repository</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Message</th>
+                <th>Hash</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% commits.forEach(commit => { %>
+                <tr style="background-color: <%= /\d$/.test(commit.hash) ? '#FFFF00' : 'transparent' %>;">
+                    <td><%= commit.author %></td>
+                    <td><%= commit.message %></td>
+                    <td><%= commit.hash %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
